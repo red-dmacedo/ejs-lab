@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1>Full Menu</h1>
+  <ul>
+    <!-- <h2>Mains</h2> -->
+    <h2>Mains</h2>
+    <ul>
+      <% menu.forEach(item => { %>
+      <% if(item.category === 'mains'){ %>
+      <% if(item.rating === 5 && item.name[0] !== "⭐") item.name = `⭐${item.name}`; %>
+      <li><%= item.name %></li>
+      <ul>
+        <li>Price: $<%= item.Price %></li>
+        <li>Rating: <%= item.rating %></li>
+        <li>Details: <%= item.details %></li>
+      </ul>
+      <% }; %>
+      <% }); %>
+    </ul>
+    <h2>Sides</h2>
+    <ul>
+      <% menu.forEach(item => { %>
+      <% if(item.category === 'sides'){ %>
+      <% if(item.rating === 5 && item.name[0] !== "⭐") item.name = `⭐${item.name}`; %>
+      <li><%= item.name %></li>
+      <ul>
+        <li>Price: $<%= item.Price %></li>
+        <li>Rating: <%= item.rating %></li>
+        <li>Details: <%= item.details %></li>
+      </ul>
+      <% }; %>
+      <% }); %>
+    </ul>
+    <h2>Desserts</h2>
+    <ul>
+      <% menu.forEach(item => { %>
+      <% if(item.category === 'desserts'){ %>
+      <% if(item.rating === 5 && item.name[0] !== "⭐") item.name = `⭐${item.name}`; %>
+      <li><%= item.name %></li>
+      <ul>
+        <li>Price: $<%= item.Price %></li>
+        <li>Rating: <%= item.rating %></li>
+        <li>Details: <%= item.details %></li>
+      </ul>
+      <% }; %>
+      <% }); %>
+    </ul>
+  </ul>
+</body>
+</html>
